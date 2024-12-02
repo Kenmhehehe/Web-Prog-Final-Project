@@ -6,7 +6,7 @@ function showPortfolio() {
   document.getElementById('main-content').classList.remove('hidden');
 }
 
-
+// Main
 const data = {
   name: "Kyneth",
   title: "I'm a",
@@ -75,12 +75,19 @@ app.innerHTML = `
           ${createSocialIcons(data.socialLinks)}
         </div>
         <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
-          <button>Click me</button>
+          <button onclick="navigateToSection('about')">Click me</button>
         </div>
       </div>
     </div>
   </section>
 `;
+
+function navigateToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' }); // Smoothly scroll to the section
+    }
+}
 
 // Dynamic typewriter effect
 const typewriterText = document.querySelector(".typewriter-text");
@@ -119,7 +126,7 @@ function sliceLetterEffect() {
 // Start the effect
 sliceLetterEffect();
 
-
+// About
 // Dynamic Data
     const aboutData = {
         title: "About Me",
@@ -128,7 +135,7 @@ sliceLetterEffect();
         topic: "Hello!",
         description: "I am Kyneth A. Querimit, a 3rd-year college student at Marinduque State University pursuing a Bachelor of Science in Information Technology with a major in Software Development.",
         buttonText: "Learn More",
-        buttonLink: "#learn-more", // Add a valid link
+        buttonLink: "#services", // Add a valid link
     };
 
     // DOM Elements
@@ -147,6 +154,7 @@ sliceLetterEffect();
     aboutButton.textContent = aboutData.buttonText;
     aboutButton.onclick = () => window.location.href = aboutData.buttonLink;
 
+//Skills
 // Data for skills and experience
 const skillsData = [
   { name: 'HTML', percentage: 90 },
@@ -196,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Services
 const services = [
   {
     icon: "fas fa-desktop",
@@ -251,35 +260,36 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-
+// Contact Me 
  const contactData = {
-    topic: "Have Any Project?",
-    buttonText: "Let's Chat"
+  topic: "Have Any Project?",
+  description: "Feel free to reach out via email or phone.",
+  email: "kenethaguilar0.com", 
+  phone: "09166591391", 
+  buttonText: "Let's Chat",
 };
 
 // Function to render the contact section dynamically
 function renderContact() {
-    const contactSection = document.getElementById('contact-text');
+  const contactSection = document.getElementById('contact-text');
 
-    // Create the dynamic content for the contact section
-    contactSection.innerHTML = `
-        <div class="topic" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">${contactData.topic}</div>
-        <p>${contactData.description}</p>
-        <div class="button" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
-            <button onclick="openGmail()">${contactData.buttonText}</button>
-        </div>
-    `;
+  // Create the dynamic content for the contact section
+  contactSection.innerHTML = `
+    <div class="topic" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="200">${contactData.topic}</div>
+    <p>${contactData.description}</p>
+    <p><strong>Email:</strong> <a href="mailto:${contactData.email}" target="_blank">${contactData.email}</a></p>
+    <p><strong>Phone:</strong> <a href="tel:${contactData.phone.replace(/ /g, '')}">${contactData.phone}</a></p>
+    <div class="button" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="400">
+        <button onclick="openGmail()">${contactData.buttonText}</button>
+    </div>
+  `;
 }
 
 // Function to open Gmail in a new tab
 function openGmail() {
-    // This will open Gmail in a new tab
-    window.open('https://mail.google.com/', '_blank');
+  // This will open Gmail in a new tab
+  window.open('https://mail.google.com/', '_blank');
 }
 
 // Call the render function when the page loads
 window.onload = renderContact;
-
-
-
-
