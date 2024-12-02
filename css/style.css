@@ -185,6 +185,9 @@ section .main-container{
 
 .main-container .image img{
 	width: 100%;
+	width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .main-container .image:hover{
@@ -256,28 +259,38 @@ section .main-container{
 	filter: drop-shadow(0 0 10px #b74b4b);
 }
 
-.content button{
-	width: 50%;
-	height: 6vh;
-	margin: 30px;
-	background-color: #b74b4b;
-	color: white;
-	border: none;
-	outline:none;
-	font-size: 120%;
-	font-weight: 700;
-	border-radius: 5px;
-	transition: 0.2s linear;
+.content {
+    display: flex;
+    flex-direction: column; /* Arrange content vertically */
+    
 }
 
-.content button:hover{
-	scale: 1.1;
-	color: #b74b4b;
-	border: 2px solid #b74b4b;
-	background-color: transparent;
-	font-weight: 700;
-	box-shadow: 0 0 40px #b74b4b;
+.content button {
+    width: 100%; /* Ensure the button takes full width (optional, remove if not needed) */
+    max-width: 200px; /* Set a maximum width for the button */
+    padding: 10px 20px; /* Adjust padding for consistency */
+    background-color: #b74b4b; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Text size */
+    font-weight: 600; /* Text weight */
+    text-align: center; /* Center text inside the button */
+    display: flex; /* Enable flexbox for centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: 0.3s ease; /* Smooth hover effect */
 }
+
+.content button:hover {
+    scale: 1.1; /* Slightly enlarge button on hover */
+    color: #b74b4b; /* Change text color */
+    border: 2px solid #b74b4b; /* Add border on hover */
+    background-color: transparent; /* Make background transparent */
+    box-shadow: 0 0 40px #b74b4b; /* Add glow effect */
+}
+
 
 /* About Section Styling*/
 
@@ -637,23 +650,29 @@ section .main-container{
 }
 }
 
-@media (max-width: 500px){
-	main-container .image{
-		width: 50%;
-		height: 60%;
-		margin-bottom: 0px;
-	}
+@media (max-width: 500px) {
+    .main-container .image {
+        width: 50%; /* Adjusted to 50% of its container */
+        height: auto; /* Automatically adjusts height to maintain aspect ratio */
+        margin-bottom: 0px;
+    }
 
-	.main-container .content{
-		width: 80%;
-	}
+    .main-container .content {
+        width: 80%; /* Reduce the content width for smaller screens */
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text inside the content */
+    }
 
-	.main-container button{
-		margin-top: 15px;
-	}
+    .main-container button {
+        margin-top: 15px; /* Add spacing above buttons */
+        width: 100%; /* Make buttons full width for better usability on small screens */
+        padding: 10px; /* Adjust padding for a responsive look */
+    }
 
-	.skills-details .boxes .per{
-		font-size: 50px;
-		color: #b74b4b;
-	}
+    .skills-details .boxes .per {
+        font-size: 50px; /* Adjust font size for better readability */
+        color: #b74b4b;
+    }
 }
