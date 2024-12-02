@@ -261,34 +261,33 @@ section .main-container{
 
 .content {
     display: flex;
-    flex-direction: column; /* Arrange content vertically */
-    
+    flex-direction: column; 
 }
 
 .content button {
-    width: 100%; /* Ensure the button takes full width (optional, remove if not needed) */
-    max-width: 200px; /* Set a maximum width for the button */
-    padding: 10px 20px; /* Adjust padding for consistency */
-    background-color: #b74b4b; /* Button background color */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 1rem; /* Text size */
-    font-weight: 600; /* Text weight */
-    text-align: center; /* Center text inside the button */
-    display: flex; /* Enable flexbox for centering */
-    align-items: center; /* Center text vertically */
-    justify-content: center; /* Center text horizontally */
-    cursor: pointer; /* Change cursor to pointer */
-    transition: 0.3s ease; /* Smooth hover effect */
+    width: 100%; 
+    max-width: 200px; 
+    padding: 10px 20px; 
+    background-color: #b74b4b;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    font-size: 1rem;
+    font-weight: 600; 
+    text-align: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer; 
+    transition: 0.3s ease; 
 }
 
 .content button:hover {
-    scale: 1.1; /* Slightly enlarge button on hover */
-    color: #b74b4b; /* Change text color */
-    border: 2px solid #b74b4b; /* Add border on hover */
-    background-color: transparent; /* Make background transparent */
-    box-shadow: 0 0 40px #b74b4b; /* Add glow effect */
+    scale: 1.1; 
+    color: #b74b4b; 
+    border: 2px solid #b74b4b; 
+    background-color: transparent; 
+    box-shadow: 0 0 40px #b74b4b; 
 }
 
 
